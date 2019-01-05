@@ -1,4 +1,4 @@
-FROM vuminhtuan/android-sdk
+FROM vuminhtuan/android-sdk:alpine
 
 # Install NodeJS, Npm
 RUN apk -U update && apk -U add \
