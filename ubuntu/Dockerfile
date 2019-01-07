@@ -1,8 +1,5 @@
 FROM vuminhtuan/android-sdk:ubuntu
 
-# Install NodeJS, Npm
-ENV NODE_VERSION 11.6.0
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
@@ -18,6 +15,9 @@ RUN set -ex; \
 		; \
 		rm -rf /var/lib/apt/lists/*; \
 	fi
+
+# Install NodeJS, Npm
+ENV NODE_VERSION 8.15.0
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
